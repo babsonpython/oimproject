@@ -10,7 +10,7 @@ def download_page(url):
     return urllib.request.urlopen(url)
 
 
-# print(download_page(DOWNLOAD_URL).read())
+print(download_page(DOWNLOAD_URL).read())
 
 
 def parse_html(html):
@@ -39,19 +39,19 @@ def parse_html(html):
 parse_html(download_page(DOWNLOAD_URL).read())
 
 
-def main():
-    url = DOWNLOAD_URL
+# def main():
+#     url = DOWNLOAD_URL
 
-    with open('data/imdb_top250.csv', 'w', encoding='utf-8', newline='') as f:
-        writer = csv.writer(f)
+#     with open('data/imdb_top250.csv', 'w', encoding='utf-8', newline='') as f:
+#         writer = csv.writer(f)
 
-        fields = ('name', ' year')
-        writer.writerow(fields)
+#         fields = ('name', ' year')
+#         writer.writerow(fields)
 
-        html = download_page(url)
-        movies = parse_html(html)
-        writer.writerows(movies)
+#         html = download_page(url)
+#         movies = parse_html(html)
+#         writer.writerows(movies)
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
