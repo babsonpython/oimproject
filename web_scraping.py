@@ -2,6 +2,7 @@ import csv
 import urllib.request
 from bs4 import BeautifulSoup
 import ssl
+from twilio_text_message import twilio_text
 
 
 
@@ -20,6 +21,7 @@ def parse_html(html):
     """
     soup = BeautifulSoup(html, features="html.parser")
     print(soup.prettify())
+    for atc in 
 
 parse_html(download_page(DOWNLOAD_URL).read())
 

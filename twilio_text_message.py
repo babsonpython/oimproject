@@ -1,19 +1,25 @@
 # Download the helper library from https://www.twilio.com/docs/python/install
 import os
 from twilio.rest import Client
+from config import WILSON_SID, WILSON_AUTH_TOKEN, WILSON_NUMBER
 
+wilson_sid = WILSON_SID
+wilson_auth = WILSON_AUTH_TOKEN
+wilson_number = WILSON_NUMBER
 
 # Find your Account SID and Auth Token at twilio.com/console
 # and set the environment variables. See http://twil.io/secure
-account_sid = os.environ['TWILIO_ACCOUNT_SID']
-auth_token = os.environ['TWILIO_AUTH_TOKEN']
+account_sid = wilson_sid
+auth_token = wilson_auth
 client = Client(account_sid, auth_token)
 
-message = client.messages \
-    .create(
-         body='This is the ship that made the Kessel Run in fourteen parsecs?',
-         from_='+15017122661',
-         to='+15558675310'
-     )
+def twilio_text():
+    message = client.messages \
+        .create(
+            body='AS50 from Badminton Warehouse is now available for purchase!!!',
+            from_='+18647320570',
+            to= wilson_number
+        )
+    return message.sid
 
-print(message.sid)
+print(twilio_text())
