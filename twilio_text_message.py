@@ -1,7 +1,7 @@
 # Download the helper library from https://www.twilio.com/docs/python/install
 import os
 from twilio.rest import Client
-from config import WILSON_SID, WILSON_AUTH_TOKEN, WILSON_NUMBER
+from credentials import WILSON_SID, WILSON_AUTH_TOKEN, WILSON_NUMBER
 
 wilson_sid = WILSON_SID
 wilson_auth = WILSON_AUTH_TOKEN
