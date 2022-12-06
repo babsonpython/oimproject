@@ -27,7 +27,7 @@ def check_availability(html):
         atc_string = str(atc_string.text).replace(' ','').strip('\n')
         # print(point)
     if atc_string == 'Soldout':
-        return 'Unvailable'
+        return 'Unavailable'
     else:
         return 'Available'
 
@@ -38,7 +38,7 @@ def send_text_if_available():
     if check_availability(download_page(RACKET_URL)) == 'Available':
         twilio_text()
     else:
-        print('Unavailble for now')
+        print('Unavailable for now!')
 
 # send_text_if_available()
 

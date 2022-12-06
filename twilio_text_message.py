@@ -1,6 +1,7 @@
 from twilio.rest import Client
 from credentials import MY_SID, MY_AUTH_TOKEN, NUMBERS #credentials.py is hidden due to sensitive information
 # NUMBERS is stored as a list of numbers that we want to send messages to. Format: [+0123XXXX890, +1234XXXX901,etc]
+# Make sure the numbers are also verified in the Twilio Console, which you will have access to after signing up for the free trial.
 
 my_sid = MY_SID
 my_auth = MY_AUTH_TOKEN
@@ -16,7 +17,7 @@ def twilio_text():
             .create(
                 body='AS50 from Badminton Warehouse is now available for purchase!!!',
                 from_='+18647320570',
-                to= number
+                to= "+16506650841"
             )
     return message.sid
 
